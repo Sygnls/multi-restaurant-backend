@@ -26,7 +26,7 @@ module.exports = {
     });
     await queryInterface.addIndex('Items', ['tenantId', 'slug'], { unique: true, name: 'item_tenant_slug_uq' });
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface) {
     await queryInterface.dropTable('Items');
   }
 };

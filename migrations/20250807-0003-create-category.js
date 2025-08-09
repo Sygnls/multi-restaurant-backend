@@ -18,7 +18,7 @@ module.exports = {
     });
     await queryInterface.addIndex('Categories', ['tenantId', 'slug'], { unique: true, name: 'cat_tenant_slug_uq' });
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface) {
     await queryInterface.dropTable('Categories');
   }
 };

@@ -2,6 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Category = sequelize.define('Category', {
     id: { type: DataTypes.STRING, primaryKey: true },
+    tenantId: { type: DataTypes.STRING, allowNull: false },
     name: { type: DataTypes.STRING, allowNull: false },
     slug: { type: DataTypes.STRING, allowNull: false },
     sortOrder: { type: DataTypes.INTEGER, defaultValue: 0 },

@@ -9,14 +9,13 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
         references: { model: 'Tenants', key: 'id' },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
+        onDelete: 'CASCADE', onUpdate: 'CASCADE'
       },
       createdAt: { type: Sequelize.DATE, allowNull: false, defaultValue: Sequelize.fn('NOW') },
       updatedAt: { type: Sequelize.DATE, allowNull: false, defaultValue: Sequelize.fn('NOW') }
     });
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface) {
     await queryInterface.dropTable('DomainMappings');
   }
 };

@@ -1,10 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Tenant = sequelize.define('Tenant', {
-    id: {
-      type: DataTypes.STRING,
-      primaryKey: true
-    },
+    id: { type: DataTypes.STRING, primaryKey: true },
     slug: { type: DataTypes.STRING, unique: true, allowNull: false },
     name: DataTypes.STRING,
     active: { type: DataTypes.BOOLEAN, defaultValue: true }
